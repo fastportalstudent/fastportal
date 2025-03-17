@@ -1,0 +1,77 @@
+<nav class="navbar blank-color" style="height: 5%;">
+  <div>
+
+  </div>
+</nav>
+
+
+<nav class="navbar navbar-expand-lg navbar-color">
+  <div class="container-fluid">
+    <ul class="navbar-nav d-flex justify-content-evenly w-100">
+      <li class="nav-item">
+        <a class="nav-link {{#if home}}active{{/if}} navbar-color fw-bold d-flex align-items-center" aria-current="page"
+          href="/home">
+          <img src="/home.svg" width="45" class="align-text-top" style="margin: 0%; padding:0%;">
+          Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{#if announcements}}active{{/if}} navbar-color fw-bold d-flex align-items-center"
+          href="/announcements">
+          <img src="/announcements.svg" width="50" class="align-text-top" style="margin: 0%; padding:0%;">
+          Announcements</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link {{#if schedules}}active{{/if}} navbar-color fw-bold d-flex align-items-center"
+          href="/schedules/grade12" role="button" aria-expanded="false">
+          <img src="/schedule.svg" width="50" class="align-text-top" style="margin: 0%; padding:0%;">
+          Schedule</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item text-center dropdown-color fw-bold" href="/schedules/grade7">Grade 7</a></li>
+          <li><a class="dropdown-item text-center dropdown-color fw-bold" href="/schedules/grade8">Grade 8</a></li>
+          <li><a class="dropdown-item text-center dropdown-color fw-bold" href="/schedules/grade9">Grade 9</a></li>
+          <li><a class="dropdown-item text-center dropdown-color fw-bold" href="/schedules/grade10">Grade 10</a></li>
+          <li><a class="dropdown-item text-center dropdown-color fw-bold" href="/schedules/grade11">Grade 11</a></li>
+          <li><a class="dropdown-item text-center dropdown-color fw-bold" href="/schedules/grade12">Grade 12</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link {{#if news}}active{{/if}} navbar-color fw-bold d-flex align-items-center" href="/news">
+          <img src="/news.svg" width="45" class="align-text-top" style="margin: 0%; padding:0%;">
+          News</a>
+
+      <li class="nav-item">
+        <a class="nav-link {{#if messages}}active{{/if}} navbar-color fw-bold d-flex align-items-center"
+          href="/messages">
+          <img src="/messages.svg" width="45" class="align-text-top" style="margin: 0%; padding:0%;">
+          Messages</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link {{#if school}} active{{/if}} navbar-color fw-bold d-flex align-items-center" href="/school/jhscurriculum">
+          <img src="/school.svg" width="50" class="align-text-top" style="margin: 0%; padding:0%;">
+          School</a>
+         <ul class="dropdown-menu">
+          <li><a class="dropdown-item text-center dropdown-color fw-bold" href="/school/aboutfast">About FAST</a></li>
+          <li><a class="dropdown-item text-center dropdown-color fw-bold" href="/school/academicpolicies">Academic Policies</a></li>
+          <li><a class="dropdown-item text-center dropdown-color fw-bold" href="/school/board">Board of Trustees</a></li>
+          <li><a class="dropdown-item text-center dropdown-color fw-bold" href="/school/fasthymn">FAST Hymn</a></li>
+          <li><a class="dropdown-item text-center dropdown-color fw-bold" href="/school/jhscurriculum">JHS Curriculum</a></li>
+          <li><a class="dropdown-item text-center dropdown-color fw-bold" href="/school/shscurriculum">SHS Curriculum</a></li>
+          <li><a class="dropdown-item text-center dropdown-color fw-bold" href="/school/organizations">Organizations</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {{#if contacts}}active{{/if}} navbar-color fw-bold d-flex align-items-center"
+          href="/contacts">
+          <img src="/contacts.svg" width="50" class="align-text-top" style="margin: 0%; padding:0%;">
+          Contacts</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link navbar-color fw-bold d-flex align-items-center"
+          href="/logout">
+          <img src="/logout.svg" width="50" class="align-text-top" style="margin: 0%; padding:0%;">
+          Log Out</a>
+      </li>
+    </ul>
+  </div>
+</nav>

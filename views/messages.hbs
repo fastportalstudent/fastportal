@@ -1,0 +1,138 @@
+<div class="sticky-top" style="z-index: 1;">
+    {{> header}}
+    {{> navigation}}
+</div>
+
+<div class="d-flex container-fluid chat-container" style="height: 767px;">
+    <!-- Sidebar -->
+    <div class="col-md-4 col-lg-3 chat-sidebar" style="height:767px;">
+
+        <ul class="chat-list">
+            {{#each teachers}}
+            <li class="chat-user" data-id="{{this._id}}">
+                <span class="user-icon">&#128100;</span> {{this.fullname}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <!-- Chat Window -->
+    <div class="chat-window w-100" style="height: 767px; background:none;">
+        <div class="chat-header">
+            {{#if isTeacher}}
+            <span id="chat-title">Select a student</span>
+            {{else}}
+            <span id="chat-title">Select a teacher</span>
+            {{/if}}
+        </div>
+        <div id="message-container" class="chat-body">
+            <!-- Chat messages will go here -->
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="message-input" class="form-control" placeholder="Write a message..." disabled>
+            <button id="send-button" class="btn btn-primary" disabled>&#128206;</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const socket = io({
+        query: { userId: "{{userId}}" }
+    });
+    const messageContainer = document.getElementById("message-container");
+    const messageInput = document.getElementById("message-input");
+    const sendButton = document.getElementById("send-button");
+
+    let selectedTeacher = null;
+    const userId = "{{userId}}";
+
+    /*document.querySelectorAll(".chat-user").forEach(button => {
+        button.addEventListener("click", () => {
+            selectedTeacher = button.dataset.id;
+            document.getElementById("chat-title").innerText = `Chat with ${button.innerText}`;
+            messageContainer.innerHTML = "";
+            messageInput.disabled = false;
+            sendButton.disabled = false;
+            socket.emit("loadMessages", { userId,selectedTeacher});
+        });
+    });*/
+
+    document.addEventListener("click", (event) => {
+        const selectedElement = event.target.closest(".chat-user"); // ✅ Ensures correct element is selected
+        if (!selectedElement) return; // 🔴 Exit if clicked element is not a teacher
+
+        selectedTeacher = selectedElement.dataset.id;
+        console.log("✅ Selected Teacher ID:", selectedTeacher); // ✅ Debug log
+
+        document.getElementById("chat-title").innerText = selectedElement.innerText;
+        messageContainer.innerHTML = "";
+        messageInput.disabled = false;
+        sendButton.disabled = false;
+
+        console.log("🔄 Sending loadMessages request:", { userId, selectedTeacher });
+
+        socket.emit("loadMessages", { userId, selectedTeacher });
+    });
+
+    socket.on("messagesLoaded", (messages) => {
+        console.log("📩 Received Messages:", messages);
+
+        messageContainer.innerHTML = "";
+        if (messages.length === 0) {
+            messageContainer.innerHTML = "<p>No messages yet.</p>";
+        } else {
+            messages.forEach(message => {
+                const div = document.createElement("div");
+                if (message.sender._id === userId) {
+                    div.textContent = message.text;
+                    div.classList.add("chat-bubble", "sent");
+                } else {
+                    div.textContent = message.text;
+                    div.classList.add("chat-bubble", "received");
+                }
+                messageContainer.appendChild(div);
+            });
+        }
+    });
+
+    socket.on("receiveMessage", addMessage);
+    socket.on("errorMessage", (msg) => alert(msg));
+
+    sendButton.addEventListener("click", sendMessage);
+    messageInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") sendMessage();
+    });
+
+    function sendMessage() {
+        const messageText = messageInput.value.trim();
+        if (messageText && selectedTeacher) {
+            socket.emit("sendMessage", { sender: userId, receiver: selectedTeacher, text: messageText });
+            messageInput.value = "";
+        }
+    }
+
+    function addMessage(message) {
+        if (!selectedTeacher || (message.sender !== selectedTeacher && message.receiver !== selectedTeacher)) return;
+
+        const div = document.createElement("div");
+        if (message.sender === userId) {
+            div.textContent = message.text; // Remove "You:"
+            div.classList.add("chat-bubble", "sent");
+        } else {
+            div.textContent = message.text; // Keep "Teacher:"
+            div.classList.add("chat-bubble", "received");
+        }
+        messageContainer.appendChild(div);
+    }
+
+    /*document.querySelectorAll(".chat-user").forEach(user => {
+        user.addEventListener("click", () => {
+            selectedTeacher = user.dataset.id;
+            document.getElementById("chat-title").innerText = `Chat with ${user.innerText}`;
+            messageContainer.innerHTML = "";
+            messageInput.disabled = false;
+            sendButton.disabled = false;
+        });
+    });*/
+</script>

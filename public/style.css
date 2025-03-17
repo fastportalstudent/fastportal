@@ -1,0 +1,473 @@
+.bg-primary {
+    background-color: navy !important;
+}
+
+.text-primary {
+    color: navy !important;
+}
+
+.btn-primary {
+    background-color: rgb(54, 54, 187);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: navy;
+}
+
+.fontsizeheading {
+    font-size: 100px;
+}
+
+.navbar-color {
+    background-color: white !important;
+    color: navy !important;
+
+}
+
+.active {
+    background-color: #c7cbd9 !important;
+
+}
+
+p {
+    margin: 0;
+
+}
+
+.container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.header {
+    background-color: #001a4d;
+    font-size: 22px;
+}
+
+.blank-color {
+    background-color: #6388b3;
+}
+
+.time {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block !important;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #90939d !important;
+}
+
+.dropdown:hover .navbar-color {
+    background-color: #c7cbd9 !important;
+}
+
+.dropdown-color {
+    background-color: white !important;
+    color: navy !important;
+
+}
+
+.nav-link:hover {
+    background-color: #c7cbd9 !important;
+}
+
+.contacts {
+    background-image: url("CONTACTS.png");
+    background-size: 100% 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.scrollarea {
+    height: 705px !important;
+    overflow-y: scroll !important;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    background: white;
+}
+
+th {
+    background: #90939d;
+    color: navy;
+}
+
+.header-school {
+    background-color: #000173;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.grey {
+    background-color: #90939d !important;
+}
+
+.wayt {
+    background-color: #ffffff !important;
+}
+
+.preloader {
+    background: navy no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1010;
+    transition: 1;
+}
+
+.logo {
+    opacity: 0;
+    animation: preloaderanimate 2s infinite;
+    z-index: inherit;
+}
+
+@keyframes preloaderanimate {
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+
+}
+
+.carousel-control-next {
+    color: blue;
+}
+
+.transparent {
+    background: none !important;
+}
+
+.chat-container {
+    height: 100vh;
+    display: flex;
+}
+
+.chat-sidebar {
+    background: #001f66;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+}
+
+.chat-header {
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    background: #002b99;
+    color: white;
+}
+
+.chat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chat-user {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.chat-user:hover {
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+
+.user-icon {
+    margin-right: 10px;
+}
+
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: white;
+}
+
+.chat-body {
+    flex-grow: 1;
+    background: url('background.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    background: #e0e0e0;
+}
+
+.chat-footer input {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.chat-body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.chat-bubble {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    word-wrap: break-word;
+}
+
+.sent {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+}
+
+.received {
+    background-color: #f1f1f1;
+    color: black;
+    align-self: flex-start;
+}
+
+.login {
+    background: url('backgroundcopy.png');
+    background-size: 100% 100%;
+}
+
+.fb-page-container {
+    max-height: fit-content;
+    overflow: hidden;
+}
+
+.about {
+    padding: 3px;
+    transition: 0.5s;
+}
+
+.calendar {
+    max-width: 400px;
+    margin: auto;
+}
+
+.day,
+.empty {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.day:hover {
+    background: #f8f9fa;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.post{
+    overflow-y: hidden !important;
+}
+
+.head{
+    background: url('head.png');
+    height: 15lvh;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('background.png');
+    background-size: 100% 100%;
+    background-position-y: bottom;
+    background-attachment: fixed;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+.left-section {
+    background: url('bg-img.png') no-repeat center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    font-style: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.left-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.suture {
+    background-color: #6388b3;
+}
+
+.profile {
+    background-color: navy;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-width: 10%;
+    max-height: 80%;
+    border-color: #001a4d;
+}
+
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10%;
+    border-color: #002366;
+    border-width: 10%;
+    border-style: solid;
+    background-color: white;
+    box-shadow: inset;
+    margin-right: 20px;
+}
+
+.profile-details {
+    flex: 1;
+}
+
+.profile button {
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.calendar,
+.announcements {
+    background-color: white;
+    color: black;
+    padding: 15px;
+    border-radius: 10px;
+    width: 48%;
+}
+
+/* Jiboy Classes/CSS */
+
+.clubheader {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+}
+
+.clubcontainer {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.clubleadership h2 {
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+}
+
+.club {
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 3px;
+    width: 1024px;
+    max-width: 1024px;
+    margin: 8px;
+    border-radius: 7px;
+    transition: 0.5s;
+}
+
+.club:hover {
+    transform: scale(1.04);
+}
+
+.policy {
+    padding: 3px;
+    transition: 0.5s;
+}
+
+.policy:hover {
+    transform: scale(1.1);
+}
+
+.club img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.club-info {
+    text-align: left;
+}
+
+.club-info h3 {
+    margin: 5px 0;
+}
+
+.club-info p {
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+}

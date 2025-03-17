@@ -1,0 +1,33 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title>
+        {{title}}
+    </title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/style.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="dflip/css/dflip.min.css" rel="stylesheet" type="text/css">
+    <script>
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+            document.querySelector(".preloader").style.display = "none";
+            document.querySelector(".content").style.display = "block";
+            },3000);
+        });
+        
+    </script>
+<!-- themify-icons.min.css is not required in version 2.0 and above -->
+<link href="dflip/css/themify-icons.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="/logo.png">
+
+</head>
+
+<body>
+    {{{body}}}
+    </div>
+    <script src="/time.js"></script>
+</body>
+
+</html>
