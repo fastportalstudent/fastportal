@@ -189,6 +189,8 @@ th {
     list-style: none;
     padding: 0;
     margin: 0;
+    overflow: scroll;
+    height: 100vh;
 }
 
 .chat-user {
